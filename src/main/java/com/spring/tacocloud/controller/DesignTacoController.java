@@ -46,9 +46,9 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(@ModelAttribute(value="design") Taco taco) {
-
-        return null;
+    public String processDesign(Taco design) {
+        // Save the taco design
+        return "redirect:/orders/current";
     }
 
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
