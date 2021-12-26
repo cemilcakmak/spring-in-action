@@ -34,6 +34,9 @@ Please correct the problems below and resubmit.
     <h3>Here's how I'll pay...</h3>
     <label for="ccNumber">Credit Card #: </label>
     <input type="text" th:field="*{ccNumber}"/>
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ccNumber'}"
+          th:errors="*{ccNumber}">CC Num Error</span>
     <br/>
     <label for="ccExpiration">Expiration: </label>
     <input type="text" th:field="*{ccExpiration}"/>
