@@ -66,7 +66,7 @@ public class DesignTacoController {
         }
         // Save the taco design
         Taco savedTaco = designRepository.save(design);
-        // order.addDesign(saved);
+        order.addDesign(savedTaco);
 
         return "redirect:/orders/current";
     }
