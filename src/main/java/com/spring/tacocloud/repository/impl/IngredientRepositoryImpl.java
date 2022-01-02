@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 @Repository
 public class IngredientRepositoryImpl implements IngredientRepository {
@@ -20,9 +21,59 @@ public class IngredientRepositoryImpl implements IngredientRepository {
     }
 
     @Override
+    public <S extends Ingredient> Iterable<S> saveAll(Iterable<S> entities) {
+        return null;
+    }
+
+    @Override
+    public Optional<Ingredient> findById(String s) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean existsById(String s) {
+        return false;
+    }
+
+    @Override
     public Iterable<Ingredient> findAll() {
         return jdbc.query("SELECT id, name, type FROM Ingredient",
                 this::mapRowToIngredient);
+    }
+
+    @Override
+    public Iterable<Ingredient> findAllById(Iterable<String> strings) {
+        return null;
+    }
+
+    @Override
+    public long count() {
+        return 0;
+    }
+
+    @Override
+    public void deleteById(String s) {
+
+    }
+
+    @Override
+    public void delete(Ingredient entity) {
+
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends String> strings) {
+
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Ingredient> entities) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
     }
 
     public Ingredient findOne(String id) {
